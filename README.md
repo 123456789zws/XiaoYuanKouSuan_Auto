@@ -1,5 +1,3 @@
-
-
 # XiaoYuanKouSuan_Auto
 
 用于小猿口算的基于Python的自动答题工具
@@ -18,7 +16,9 @@
 
   <h3 align="center">“小猿口算自动答题器”</h3>
   <p align="center">
-    用于小猿口算的基于Python的自动答题工具
+    用于小猿口算的基于Python的自动答题工具</br>
+    该项目没有修改任何小猿口算数据，仅使用tesseract文本识别(OCR)引擎进行视觉识别，我对B站锁定我视频表示抗议（BV1kc2NY6Ey1）
+    ![image](https://github.com/user-attachments/assets/7b3c2c67-7e7c-4a38-a972-3c572617dced)
     <br />
     <a href="https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto"><strong>探索本项目的文档 »</strong></a>
     <br />
@@ -44,10 +44,20 @@
 - [鸣谢](#鸣谢)
 
 ### 上手指南
+使用`BlueStacks`模拟器运行Android虚拟机 </br>
+使用`BlueStacks脚本管理器`手写录入`>` `<`的输入内容并调整至5倍速 </br>
+![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example2.png) </br>
+将其绑定热键至`,` `.` </br>
+```python
+def draw_greater_than(origin_x, origin_y, size):
+    pyautogui.press(".")
 
-请确保基于Windows进行编译
-拥有一台有MIUI+或小米妙想功能的手机
-桌面操作系统中安装了MIUI+或小米电脑管家，并能成功将手机投屏至桌面端
+def draw_less_than(origin_x, origin_y, size):
+    pyautogui.press(",")
+```
+
+
+
 
 ###### 开发前的配置要求
 
@@ -59,12 +69,20 @@
 1. 在[Python](https://www.python.org/) 下载对应Python版本
 2. 在[tesseract](https://github.com/tesseract-ocr/tesseract)下载Windows版本，并安装中文语言确保最佳兼容性
 3. 下载[小猿搜题.py](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py)
-4. 安装所需的Python库
-```python
-pip install opencv-python pyautogui pytesseract keyboard numpy
+4. 安装所需的Python库（有两种安装命令，第一种是安装速度更快的清华大学镜像源，第二种是官方镜像源）👇无论哪个都行，反正选一个
+
+清华大学镜像源
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python numpy pyautogui pytesseract keyboard
 ```
-5. 调整第9行代码路径为你的tesseract安装路径
-6. 根据你的所属位置进行调整
+官方镜像源
+```bash
+pip install opencv-python numpy pyautogui pytesseract keyboard
+```
+5. 调整第9行代码路径为你的tesseract安装路径</br>
+![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example3.png)
+6. 根据你的所属位置进行调整,如下图所示 </br>
+![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example1.png)
 
 
 ### 使用到的框架
